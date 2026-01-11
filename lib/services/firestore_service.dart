@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'goal_model.dart';
+import '../models/goal_model.dart';
 
 // فئة المستودع المسؤولة عن التعامل مع قاعدة البيانات Firestore
-class GoalRepository {
+class FirestoreService {
   // معرف المستخدم الحالي
   final String? userId;
   // كائن Firestore للتعامل مع قاعدة البيانات
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   // البناء (Constructor)
-  GoalRepository({this.userId});
+  FirestoreService({this.userId});
 
   // خاصية للوصول إلى مجموعة الأهداف الخاصة بالمستخدم الحالي
   CollectionReference get _goalsCollection {

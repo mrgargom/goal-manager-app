@@ -4,6 +4,19 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
+// ---------------------------------------------------------------------------
+// هذا الملف تم توليده تلقائياً بواسطة أداة FlutterFire CLI.
+// ---------------------------------------------------------------------------
+// الغرض منه:
+// يحتوي على مفاتيح وإعدادات الاتصال بمشروع Firebase الخاص بالتطبيق.
+// بدلاً من وضع ملفات json أو plist يدوياً لكل منصة، هذا الملف يجمع كل
+// الإعدادات في مكان واحد بلغة Dart.
+//
+// وظيفته:
+// عند تشغيل التطبيق (في ملف main.dart)، نستخدم هذا الكلاس لتحديد الإعدادات
+// المناسبة للمنصة التي يعمل عليها التطبيق حالياً (Android, iOS, Web, Windows).
+// ---------------------------------------------------------------------------
+
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -15,10 +28,15 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
+  // ---------------------------------------------------------------------------
+  // دالة ذكية تحدد المنصة الحالية وتعيد الإعدادات الموافقة لها
+  // ---------------------------------------------------------------------------
   static FirebaseOptions get currentPlatform {
+    // 1. هل التطبيق يعمل على المتصفح (Web)؟
     if (kIsWeb) {
       return web;
     }
+    // 2. إذا لم يكن ويب، نتحقق من نوع نظام التشغيل
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
@@ -29,6 +47,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.windows:
         return windows;
       case TargetPlatform.linux:
+        // Linux غير مدعوم حالياً في هذه الإعدادات
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
           'you can reconfigure this by running the FlutterFire CLI again.',
@@ -40,6 +59,9 @@ class DefaultFirebaseOptions {
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // إعدادات Firebase الخاصة بالويب (Web)
+  // ---------------------------------------------------------------------------
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDb1kNhVWqN20vb9_sl_xSWRvxGImqfRpk',
     appId: '1:162787630610:web:29cf40b56b553a6d7e42cb',
@@ -50,6 +72,9 @@ class DefaultFirebaseOptions {
     measurementId: 'G-BQZ1MZ86YB',
   );
 
+  // ---------------------------------------------------------------------------
+  // إعدادات Firebase الخاصة بالأندرويد (Android)
+  // ---------------------------------------------------------------------------
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCwtI9MvyA2zweBQeUp_TqPojbEGyVm-e8',
     appId: '1:162787630610:android:c931a4e5f6bb2eb57e42cb',
@@ -58,6 +83,9 @@ class DefaultFirebaseOptions {
     storageBucket: 'goal-tracking-ba066.firebasestorage.app',
   );
 
+  // ---------------------------------------------------------------------------
+  // إعدادات Firebase الخاصة بالآيفون (iOS)
+  // ---------------------------------------------------------------------------
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAgyP79Q4Vj350k8OqLHCfjYa1v39LqNGA',
     appId: '1:162787630610:ios:5cc773bf9208d1697e42cb',
@@ -67,6 +95,9 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.goalManagerApp',
   );
 
+  // ---------------------------------------------------------------------------
+  // إعدادات Firebase الخاصة بالماك (macOS)
+  // ---------------------------------------------------------------------------
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAgyP79Q4Vj350k8OqLHCfjYa1v39LqNGA',
     appId: '1:162787630610:ios:5cc773bf9208d1697e42cb',
@@ -76,6 +107,9 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.goalManagerApp',
   );
 
+  // ---------------------------------------------------------------------------
+  // إعدادات Firebase الخاصة بالويندوز (Windows)
+  // ---------------------------------------------------------------------------
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyDb1kNhVWqN20vb9_sl_xSWRvxGImqfRpk',
     appId: '1:162787630610:web:afd15106e94984337e42cb',

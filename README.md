@@ -10,11 +10,9 @@ The **Goal Setting App** allows users to define objectives, break them down into
 
 *   **Goal Management**: Create, read, update, and delete (CRUD) goals with titles, descriptions, and deadlines.
 *   **Progress Tracking**: Visual progress bars with dynamic color coding (Not Started, In Progress, Completed).
-*   **Milestones**: Break down complex goals into smaller, achievable tasks.
 *   **Smart Search & Filtering**: Instantly filter goals by status or search by keywords with text highlighting.
 *   **Rich Media Attachments**: Upload and view images associated with goals (powered by Firebase Storage and CachedNetworkImage).
 *   **Theme Customization**: Toggle between Light and Dark modes with preference persistence.
-*   **Data Portability**: Export and Import goals via JSON for backup and restoration.
 *   **Secure Authentication**: User sign-up and login functionality using Firebase Auth.
 
 ## Tech Stack
@@ -45,7 +43,7 @@ lib/
 │   └── goals/              # Main Goals feature
 │       ├── data/           # Models and Repositories
 │       ├── presentation/   # UI (Screens, Widgets)
-│       ├── services/       # Backup/Export services
+│       ├── services/       # Backup services
 │       └── state/          # State management (GoalProvider)
 ├── shared/                 # Reusable widgets and constants
 │   └── widgets/            # Common UI components (Buttons, etc.)
@@ -62,8 +60,8 @@ lib/
 
 2.  **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/goal-setting-app.git
-    cd goal-setting-app
+    git clone https://github.com/mrgargom/goal-manager-app.git
+    cd goal-manager-app
     ```
 
 3.  **Install Dependencies**:
