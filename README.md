@@ -93,6 +93,69 @@ This project was developed with the assistance of AI tools. Below is a summary o
 
 ### Used Prompts (Core Requirements)
 
+// Create a Goal model for a goal app.
+// Properties:
+// - id (String)
+// - title (String)
+// - description (String)
+// - progress (int from 0 to 100)
+// - milestones (List<String>)
+// - createdAt (Timestamp)
+// Add Firestore serialization methods.
+
+
+// Create GoalRepository to manage Firestore CRUD.
+// Responsibilities:
+// - Stream all goals in real time
+// - Add a new goal
+// - Delete a goal
+// Use Firestore collection name "goals".
+
+
+// Create GoalListScreen.
+// Display goals using StreamBuilder.
+// Show progress using LinearProgressIndicator.
+// Allow updating progress.
+// Allow deleting goals.
+// FloatingActionButton to add a new goal.
+
+
+// ADD PROGRESS FILTER FEATURE.
+//
+// Context:
+// - Flutter Goal Setting App
+// - Firebase + Cloud Firestore
+// - Provider state management
+//
+// Requirements:
+// - Add an enum GoalFilter with values:
+//   * all
+//   * notStarted (progress == 0)
+//   * inProgress (progress > 0 && progress < 100)
+//   * completed (progress == 100)
+//
+// - Store the current filter in GoalProvider
+// - Provide a setter method to change the filter
+// - Expose a filteredGoals stream based on the selected filter
+// - Keep Firestore stream as the data source
+
+
+"Here is my theme configuration.
+Please check for Material 3 compliance:
+Is useMaterial3: true set?
+Am I using ColorScheme.fromSeed or a proper color palette?
+Is there a clear distinction between Light and Dark modes?
+Are Google Fonts implemented correctly in the TextTheme?
+
+
+"I have implemented Firebase Auth with Provider.
+Check my logic:
+I created an AuthService to handle Firebase calls.
+I used ChangeNotifierProxyProvider in main.dart to pass the userId from AuthProvider to GoalProvider.
+I created an AuthWrapper to switch between Login and Home screens.
+Please review my code snippet  confirm if this safely handles the user session and data security."
+
+
 The application was built based on the following synthesized requirements prompt:
 
 > "Create a robust Flutter Goal Management application using **Provider** for state management and **Firebase** for the backend. The app should follow **Clean Architecture** principles.
